@@ -2,14 +2,14 @@ package solitaire;
 
 /**
  * @author Laurent et Jonathan
- *PlateauTech (Plateau Technique) est une classe qui gÂre le plateau niveau technique
+ *@PlateauTech une classe qui gère le plateau niveau technique.
  *Le plateauUI sera dans une autre classe
  */
 
 public class PlateauTech {
 
 	private int nombreCoups = 0;
-	private int nombrePions = 32;
+	private int nombrePions = 32;   // initial : 32 pions
 	private int[][] tabPions = new int [7][7];
 
 	public PlateauTech(){
