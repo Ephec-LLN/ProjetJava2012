@@ -1,0 +1,60 @@
+!SESSION 2012-12-09 02:41:37.181 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_37
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -keyring /Users/Laurent/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -data /Users/Laurent/GitHub/ProjetJava2012 -product org.eclipse.epp.package.java.product -keyring /Users/Laurent/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2012-12-09 02:41:43.595
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2012-12-09 02:43:29.482 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_37
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/Laurent/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/Laurent/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2012-12-09 02:43:36.345
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.ui 4 4 2012-12-09 02:43:37.374
+!MESSAGE Could not create view: 'org.eclipse.ui.internal.introview'.
+
+!ENTRY org.eclipse.ui 4 0 2012-12-09 02:43:40.526
+!MESSAGE Problems occurred restoring workbench.
+!SUBENTRY 1 unknown 0 0 2012-12-09 02:43:40.526
+!MESSAGE OK
+!SUBENTRY 1 unknown 0 0 2012-12-09 02:43:40.526
+!MESSAGE OK
+!SUBENTRY 1 unknown 0 0 2012-12-09 02:43:40.527
+!MESSAGE OK
+!SUBENTRY 1 unknown 0 0 2012-12-09 02:43:40.527
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.ui 4 0 2012-12-09 02:43:40.527
+!MESSAGE Unable to restore perspective: Workspace - Java.
+!SUBENTRY 2 org.eclipse.ui 0 0 2012-12-09 02:43:40.527
+!MESSAGE Problems occurred restoring perspective.
+!SUBENTRY 3 org.eclipse.ui 0 0 2012-12-09 02:43:40.527
+!MESSAGE 
+!SUBENTRY 2 unknown 0 0 2012-12-09 02:43:40.527
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2012-12-09 02:43:40.527
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2012-12-09 02:43:40.527
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2012-12-09 02:43:40.527
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2012-12-09 02:43:40.527
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2012-12-09 02:43:40.527
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2012-12-09 02:43:40.527
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2012-12-09 02:43:40.527
+!MESSAGE OK
+!SUBENTRY 2 org.eclipse.ui 4 0 2012-12-09 02:43:40.527
+!MESSAGE Could not find view: org.eclipse.ui.internal.introview
+!SUBENTRY 1 unknown 0 0 2012-12-09 02:43:40.527
+!MESSAGE OK

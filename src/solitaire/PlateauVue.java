@@ -7,5 +7,6 @@ public class PlateauVue extends JPanel {
 
 	public PlateauVue(PlateauTech pT){
 		
+		
 	}
 }
