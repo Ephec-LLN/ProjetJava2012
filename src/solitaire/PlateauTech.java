@@ -2,7 +2,7 @@ package solitaire;
 
 /**
  * @author Laurent et Jonathan
- *@PlateauTech une classe qui g�re le plateau niveau technique.
+ *@PlateauTech une classe qui genere le plateau niveau technique.
  *Le plateauUI sera dans une autre classe
  */
 
@@ -16,27 +16,27 @@ public class PlateauTech {
 		initPlateau();
 	} //Fin PlateauTech
 
-	// 1 = Pion prŽsent ; 0 = Pion absent ; -1 = Pion interdit
+	// 1 = Pion present ; 0 = Pion absent ; -1 = Pion interdit
 	public void initPlateau(){
 		for (int i = 0; i < 7 ; i++){
 			for (int j = 0; j < 7; j++){
-				tabPions[i][j] = 1;
+				tabPions[i][j] = 1;		// mettre des pions dans toutes les cases
 			}
 		}
 		for (int i=0; i < 2; i++){
 			for (int j=0; j<2; j++){
-				tabPions[i][j] = -1;
+				tabPions[i][j] = -1; 	// mettre les cases inaccessibles en mode "pion interdit" 
 			}
 			for (int j=5; j<7; j++){
-				tabPions[i][j] = -1;
+				tabPions[i][j] = -1;	// mettre les cases inaccessibles en mode "pion interdit" 
 			}
 		}
 		for (int i=5; i < 7; i++){
 			for (int j=0; j<2; j++){
-				tabPions[i][j] = -1;
+				tabPions[i][j] = -1;	// mettre les cases inaccessibles en mode "pion interdit" 
 			}
 			for (int j=0; j<2; j++){
-				tabPions[i][j] = -1;
+				tabPions[i][j] = -1;	// mettre les cases inaccessibles en mode "pion interdit" 
 			}
 		}
 		tabPions[3][3] = 0; //Pas de pion au centre du plateau
@@ -49,13 +49,13 @@ public class PlateauTech {
 	}
 
 	public int sautPion(int x1, int y1, int x2, int y2){
-		int xM = (x1+x2)/2; // coordonnŽe en x du pion au dessus duquel on saute
-		int yM = (x1+x2)/2; // coordonnŽe en y du pion au dessus duquel on saute
+		int xM = (x1+x2)/2; // coordonnee en x du pion au dessus duquel on saute
+		int yM = (x1+x2)/2; // coordonnee en y du pion au dessus duquel on saute
 
 		if ((x1 == x2 && Math.abs(y1 - y2) == 2 && tabPions[xM][yM] == 1 && tabPions[xM][yM] == 1 && tabPions[x2][y2] == 0)||(y1 == y2 && Math.abs(x1 - x2) == 2 && tabPions[xM][yM] == 1 && tabPions[x2][y2] == 0)) {
-			tabPions[x1][y1] = 0;
-			tabPions[xM][yM] = 0;
-			tabPions[x2][y2] = 1;
+			tabPions[x1][y1] = 0;    // on "efface" le pion de départ
+			tabPions[xM][yM] = 0;	 // on "efface" le pion "sauté"
+			tabPions[x2][y2] = 1;	 // on "ajoute" le pion de l'arrivée
 			setNombreCoups(getNombreCoups() + 1);
 			nombrePions--;
 			return 1;
