@@ -2,10 +2,10 @@ package solitaire;
 
 import javax.swing.JPanel;
 
-public class PlateauVue extends JPanel {
+public class PlateauUI extends JPanel {
 	private PlateauTech plateauTech;
 
-	public PlateauVue(PlateauTech pT){
+	public PlateauUI(PlateauTech pT){
 		
 		
 	}
