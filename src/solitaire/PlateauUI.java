@@ -16,6 +16,8 @@ import javax.swing.JPanel;
 
 public class PlateauUI extends JPanel {
 
+
+	private static final long serialVersionUID = 745306872625426774L;
 	private PlateauTech plateauTech;
 	private Pion PionSelect = null;
 	private int nbLignes=7;

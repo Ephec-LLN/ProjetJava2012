@@ -1,6 +1,8 @@
 package solitaire;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+
 import javax.swing.JFrame;
 
 
@@ -15,7 +17,9 @@ public class Jeu {
 
 		PlateauUI pUI = new PlateauUI(plateau);
 		
-		Menu menu = new Menu(plateau);	
+		Menu menu = new Menu(plateau);
+		
+		jeu.setBackground(Color.ORANGE);
 		
 		jeu.add(menu, BorderLayout.NORTH);
 		
