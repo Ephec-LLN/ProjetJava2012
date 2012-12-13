@@ -10,7 +10,7 @@ public class PlateauTech {
 
 	private int nombreCoups = 0;
 	private int nombrePions = 32;   // initial : 32 pions
-	private int[][] tabPions = new int [7][7];
+	protected int[][] tabPions = new int [7][7];
 
 	public PlateauTech(){
 		initPlateau();
@@ -35,7 +35,7 @@ public class PlateauTech {
 			for (int j=0; j<2; j++){
 				tabPions[i][j] = -1;	// mettre les cases inaccessibles en mode "pion interdit" 
 			}
-			for (int j=0; j<2; j++){
+			for (int j=5; j<7; j++){
 				tabPions[i][j] = -1;	// mettre les cases inaccessibles en mode "pion interdit" 
 			}
 		}
@@ -50,9 +50,9 @@ public class PlateauTech {
 
 	public int sautPion(int x1, int y1, int x2, int y2){
 		int xM = (x1+x2)/2; // coordonnee en x du pion au dessus duquel on saute
-		int yM = (x1+x2)/2; // coordonnee en y du pion au dessus duquel on saute
+		int yM = (y1+y2)/2; // coordonnee en y du pion au dessus duquel on saute
 
-		if ((x1 == x2 && Math.abs(y1 - y2) == 2 && tabPions[xM][yM] == 1 && tabPions[xM][yM] == 1 && tabPions[x2][y2] == 0)||(y1 == y2 && Math.abs(x1 - x2) == 2 && tabPions[xM][yM] == 1 && tabPions[x2][y2] == 0)) {
+		if ((x1 == x2 && Math.abs(y1 - y2) == 2 && tabPions[x1][y1] == 1 && tabPions[xM][yM] == 1 && tabPions[x2][y2] == 0)||(y1 == y2 && Math.abs(x1 - x2) == 2 && tabPions[x1][y1] == 1 && tabPions[xM][yM] == 1 && tabPions[x2][y2] == 0)) {
 			tabPions[x1][y1] = 0;    // on "efface" le pion de départ
 			tabPions[xM][yM] = 0;	 // on "efface" le pion "sauté"
 			tabPions[x2][y2] = 1;	 // on "ajoute" le pion de l'arrivée

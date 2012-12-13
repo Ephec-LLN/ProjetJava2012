@@ -12,13 +12,13 @@ public class Menu extends JMenuBar {
 
 	private static final long serialVersionUID = 1L;
 	private static PlateauTech plateau;
-	private static final String Aide = "Règles du jeu\n" +
+	private static final String Aide = "R√®gles du jeu\n" +
 			"-------------\n\n"+
 			"Les regles sont simples, vous disposez d'un plateau\n" +
 			"en forme de croix, la case centrale etant vide, le\n" +
-			"reste est rempli de pions. Pour éliminer un pion,\n" +
+			"reste est rempli de pions. Pour √©liminer un pion,\n" +
 			"il suffit de sauter au dessus avec un autre pion. Le\n" +
-			"but étant de n'avoir plus qu'un pion, au centre du\n" +
+			"but √©tant de n'avoir plus qu'un pion, au centre du\n" +
 			"plateau.\n\nBon Jeu !";
 
 
@@ -28,7 +28,10 @@ public class Menu extends JMenuBar {
 		JMenuItem partie = new JMenuItem("Nouvelle Partie");
 		partie.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Menu.plateau.recommencer();
+				int reply = JOptionPane.showConfirmDialog(null, "Recommencer?", "Nouvelle Partie",  JOptionPane.YES_NO_OPTION);
+				if (reply == JOptionPane.YES_OPTION) {
+					Menu.plateau.recommencer();	
+				}
 			}
 		});
 		this.add(partie);
