@@ -52,9 +52,9 @@ public class PlateauUI extends JPanel {
 	public void majPlateau() {
 		for(int i = 0;i <7;i++) {
 			for (int j = 0; j<7; j++) {
-				plateau[i][j].setIcon(new ImageIcon("images/solitairePions.gif"));
+				tabPions[i][j].setIcon(new ImageIcon("images/solitairePions.gif"));
 				if (plateauTech.tabPions[i][j] == 0) 	
-					plateau[i][j].setIcon(new ImageIcon("images/solitaireVides.gif"));
+					tabPions[i][j].setIcon(new ImageIcon("images/solitaireVides.gif"));
 			}
 		}
 	}
