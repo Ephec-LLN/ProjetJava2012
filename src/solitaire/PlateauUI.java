@@ -20,29 +20,29 @@ public class PlateauUI extends JPanel {
 	private Pion PionSelect = null;
 	private int nbLignes=7;
 	private int nbColonnes=7;
-	private Pion[][] plateau = new Pion[nbColonnes][nbLignes];
+	private Pion[][] tabPions = new Pion[nbColonnes][nbLignes];
 
 	public PlateauUI(PlateauTech pT){
 
 		this.plateauTech = pT;
 
-		GridBagLayout Layout = new GridBagLayout();
-		setLayout(Layout);
+		GridBagLayout JPanel1Layout = new GridBagLayout();
+		setLayout(JPanel1Layout);
 
 
-		GridBagConstraints g;
+		GridBagConstraints gridbag;
 
 		for (int i = 0; i < 7; i++) {
 			for( int j = 0; j<7; j++)  {
-				g = new GridBagConstraints(i, j, 1, 1, 0.0, 0.0, 
+				gridbag = new GridBagConstraints(i, j, 1, 1, 0.0, 0.0, 
 						GridBagConstraints.CENTER, 
 						GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
-				plateau[i][j] = new Pion(i,j);
-				plateau[i][j].addMouseListener(plateau[i][j]);
-				Layout.setConstraints(plateau[i][j],g);
-				this.add(plateau[i][j]);
+				tabPions[i][j] = new Pion(i,j);
+				tabPions[i][j].addMouseListener(tabPions[i][j]);
+				JPanel1Layout.setConstraints(tabPions[i][j],gridbag);
+				this.add(tabPions[i][j]);
 				if (plateauTech.tabPions[i][j] == -1){
-					plateau[i][j].setVisible(false);
+					tabPions[i][j].setVisible(false);
 				}
 			}
 		}
