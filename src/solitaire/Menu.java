@@ -64,7 +64,7 @@ public class Menu extends JMenuBar {
 				}
 		});	
 		submenu.add(croix);
-		JMenuItem carre = new JMenuItem("CarrŽ");
+		JMenuItem carre = new JMenuItem("Carrï¿½");
 		croix.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e){
 					choix = 2;
@@ -87,7 +87,7 @@ public class Menu extends JMenuBar {
 		submenu.add(coeur);
 	
 		
-		JMenuItem moz = new JMenuItem("Moza•que");
+		JMenuItem moz = new JMenuItem("Mozaï¿½que");
 		croix.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e){
 					choix = 4;

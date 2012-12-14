@@ -23,13 +23,15 @@ public class PlateauUI extends JPanel {
 	private int nbLignes=7;
 	private int nbColonnes=7;
 	private Pion[][] tabPions = new Pion[nbColonnes][nbLignes];
+	private String[] tabCheminImg = {"images/solitairePion.gif", "images/solitaireVide.gif"};
 
 	public PlateauUI(PlateauTech pT){
 
 		this.plateauTech = pT;
-
+		this.setBackground(Color.WHITE);
 		GridBagLayout JPanel1Layout = new GridBagLayout();
 		setLayout(JPanel1Layout);
+		this.setOpaque(false);
 
 
 		GridBagConstraints gridbag;
@@ -40,6 +42,7 @@ public class PlateauUI extends JPanel {
 						GridBagConstraints.CENTER, 
 						GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
 				tabPions[i][j] = new Pion(i,j);
+				tabPions[i][j].setBorder(null);
 				tabPions[i][j].addMouseListener(tabPions[i][j]);
 				JPanel1Layout.setConstraints(tabPions[i][j],gridbag);
 				this.add(tabPions[i][j]);
@@ -54,9 +57,9 @@ public class PlateauUI extends JPanel {
 	public void majPlateau() {
 		for(int i = 0;i <7;i++) {
 			for (int j = 0; j<7; j++) {
-				tabPions[i][j].setIcon(new ImageIcon("images/solitairePions.gif"));
+				tabPions[i][j].setIcon(new ImageIcon(tabCheminImg[0]));
 				if (plateauTech.tabPions[i][j] == 0) 	
-					tabPions[i][j].setIcon(new ImageIcon("images/solitaireVides.gif"));
+					tabPions[i][j].setIcon(new ImageIcon(tabCheminImg[1]));
 			}
 		}
 	}
