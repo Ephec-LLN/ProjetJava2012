@@ -23,7 +23,7 @@ public class PlateauUI extends JPanel {
 	private int nbLignes=7;
 	private int nbColonnes=7;
 	private Pion[][] tabPions = new Pion[nbColonnes][nbLignes];
-	private String[] tabCheminImg = {"images/solitairePion.gif", "images/solitaireVide.gif"};
+	private String[] tabCheminImg = {"images/solitairePionsTransp.gif", "images/solitaireVidesTransp.gif"};
 
 	public PlateauUI(PlateauTech pT){
 
@@ -42,6 +42,9 @@ public class PlateauUI extends JPanel {
 						GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
 				tabPions[i][j] = new Pion(i,j);
 				tabPions[i][j].setBorder(null);
+				tabPions[i][j].setOpaque(false);
+				tabPions[i][j].setContentAreaFilled(false);
+				tabPions[i][j].setBorderPainted(false);
 				tabPions[i][j].addMouseListener(tabPions[i][j]);
 				JPanel1Layout.setConstraints(tabPions[i][j],gridbag);
 				this.add(tabPions[i][j]);
