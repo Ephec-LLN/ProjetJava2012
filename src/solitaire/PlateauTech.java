@@ -133,18 +133,23 @@ public class PlateauTech {
 		}
 	}
 
-	public void choixPlateau(int choix){
+	/*public void choixPlateau(int choix){
 		switch (choix) {
 		case 1 : initPlateauCroix();
+				 break;
 		case 2 : initPlateauCarre();
+				 break;
 		case 3 : initPlateauCoeur();
+				 break;
 		case 4 : initPlateauMoz();
+				 break;
 		case 5 : initPlateauSmiley();
+				 break;
 		}
-	}
+	}*/
 
 	public void recommencer(){
-		choixPlateau(menu.getChoix());
+		menu.choixPlateau(2);
 		/*this.nombreCoups = 0;
 		this.nombrePions = 32;*/
 	}

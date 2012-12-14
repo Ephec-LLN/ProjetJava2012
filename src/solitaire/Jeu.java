@@ -1,6 +1,7 @@
 package solitaire;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -34,19 +35,21 @@ public class Jeu {
 
 		jeu.setTitle("Projet Java - Solitaire - Janvier 2013");
 		PlateauTech plateau = new PlateauTech();
-
+		Menu menu = new Menu(plateau);
+		
 		PlateauUI pUI = new PlateauUI(plateau);
 
-		Menu menu = new Menu(plateau);
+		
 
 		jeu.add(menu, BorderLayout.NORTH);
 
 		jeu.add(pUI, BorderLayout.CENTER);
-
+		
 		jeu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jeu.setResizable(false);
-		jeu.setSize(600,600);
+		jeu.setSize(500,500);
 		jeu.setLocationRelativeTo(null);
+		
 		jeu.setVisible(true);
 	}
 }
