@@ -44,7 +44,7 @@ public class PlateauUI extends JPanel {
 				tabPions[i][j].setBorder(null);
 				tabPions[i][j].setOpaque(false);
 				tabPions[i][j].setContentAreaFilled(false);
-				tabPions[i][j].setBorderPainted(false);
+				//tabPions[i][j].setBorderPainted(false);
 				tabPions[i][j].addMouseListener(tabPions[i][j]);
 				JPanel1Layout.setConstraints(tabPions[i][j],gridbag);
 				this.add(tabPions[i][j]);
