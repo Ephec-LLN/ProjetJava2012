@@ -28,7 +28,6 @@ public class PlateauUI extends JPanel {
 	public PlateauUI(PlateauTech pT){
 
 		this.plateauTech = pT;
-		this.setBackground(Color.WHITE);
 		GridBagLayout JPanel1Layout = new GridBagLayout();
 		setLayout(JPanel1Layout);
 		this.setOpaque(false);
@@ -59,7 +58,9 @@ public class PlateauUI extends JPanel {
 			for (int j = 0; j<7; j++) {
 				tabPions[i][j].setIcon(new ImageIcon(tabCheminImg[0]));
 				if (plateauTech.tabPions[i][j] == 0) 	
-					tabPions[i][j].setIcon(new ImageIcon(tabCheminImg[1]));
+					//tabPions[i][j].setIcon(new ImageIcon(tabCheminImg[1]));
+					tabPions[i][j].setVisible(false);
+					tabPions[i][j].setOpaque(false);
 			}
 		}
 	}
