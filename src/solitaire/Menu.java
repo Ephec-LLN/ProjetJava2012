@@ -58,7 +58,7 @@ public class Menu extends JMenuBar {
 		croix.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e){
 					choix = 1;
-					plateau.choixPlateau(choix);
+					plateau.recommencer();
 					repaint();
 					revalidate();
 				}
@@ -68,7 +68,7 @@ public class Menu extends JMenuBar {
 		croix.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e){
 					choix = 2;
-					plateau.choixPlateau(choix);
+					plateau.recommencer();
 					repaint();
 					revalidate();
 				}
@@ -79,7 +79,7 @@ public class Menu extends JMenuBar {
 		croix.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e){
 					choix = 3;
-					plateau.choixPlateau(choix);
+					plateau.recommencer();
 					repaint();
 					revalidate();
 				}
@@ -90,14 +90,20 @@ public class Menu extends JMenuBar {
 		JMenuItem moz = new JMenuItem("Moza•que");
 		croix.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					
+					choix = 4;
+					plateau.recommencer();
+					repaint();
+					revalidate();				
 				}
 		});
 		submenu.add(moz);
 		JMenuItem smiley = new JMenuItem("Smiley");
 		croix.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					
+					choix = 5;
+					plateau.recommencer();
+					repaint();
+					revalidate();					
 				}
 		});
 		submenu.add(smiley);
