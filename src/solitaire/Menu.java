@@ -13,6 +13,8 @@ public class Menu extends JMenuBar {
 
 	private static final long serialVersionUID = 1L;
 	private static PlateauTech plateau;
+	private int choix = 1;
+	
 	private static final String Aide = "R√®gles du jeu\n" +
 			"-------------\n\n"+
 			"Les regles sont simples, vous disposez d'un plateau\n" +
@@ -23,7 +25,7 @@ public class Menu extends JMenuBar {
 			"plateau.\n\nBon Jeu !";
 
 
-	public Menu(PlateauTech plateau) {
+	public Menu(final PlateauTech plateau) {
 		super();
 		Menu.plateau = plateau;
 		JMenuItem partie = new JMenuItem("Nouvelle Partie");
@@ -50,10 +52,61 @@ public class Menu extends JMenuBar {
 			}
 		});	
 		this.add(apd);
-		/*JMenuItem perso = new JMenuItem("Personnalisation");
-		JMenu submenu = new JMenu("test");
+		JMenu perso = new JMenu("Personnalisation");
+		JMenu submenu = new JMenu("Plateau");
+		JMenuItem croix = new JMenuItem("Croix");
+		croix.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+					choix = 1;
+					plateau.choixPlateau(choix);
+					repaint();
+					revalidate();
+				}
+		});	
+		submenu.add(croix);
+		JMenuItem carre = new JMenuItem("Carré");
+		croix.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+					choix = 2;
+					plateau.choixPlateau(choix);
+					repaint();
+					revalidate();
+				}
+		});
+		submenu.add(carre);
+		
+		JMenuItem coeur = new JMenuItem("Coeur");
+		croix.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+					choix = 3;
+					plateau.choixPlateau(choix);
+					repaint();
+					revalidate();
+				}
+		});
+		submenu.add(coeur);
+	
+		
+		JMenuItem moz = new JMenuItem("Mozaïque");
+		croix.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+					
+				}
+		});
+		submenu.add(moz);
+		JMenuItem smiley = new JMenuItem("Smiley");
+		croix.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+					
+				}
+		});
+		submenu.add(smiley);
 		perso.add(submenu);
-		this.add(perso);*/
+		this.add(perso);
 	}
+	public  int getChoix() {
+		return choix;
+	}
+
 
 }

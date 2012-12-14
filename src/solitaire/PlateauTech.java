@@ -10,14 +10,16 @@ public class PlateauTech {
 
 	private int nombreCoups = 0;
 	private int nombrePions = 32;   // initial : 32 pions
+	private Menu menu;
+
 	protected int[][] tabPions = new int [7][7];
 
 	public PlateauTech(){
-		initPlateau();
+		initPlateauCroix();
 	} //Fin PlateauTech
 
 	// 1 = Pion present ; 0 = Pion absent ; -1 = Pion interdit
-	public void initPlateau(){
+	public void initPlateauCroix(){
 		for (int i = 0; i < 7 ; i++){
 			for (int j = 0; j < 7; j++){
 				tabPions[i][j] = 1;		// mettre des pions dans toutes les cases
@@ -42,10 +44,109 @@ public class PlateauTech {
 		tabPions[3][3] = 0; //Pas de pion au centre du plateau
 	} // fin initPlateau
 
+	public void initPlateauCarre(){
+		for (int i = 0; i < 7 ; i++){
+			for (int j = 0; j < 7; j++){
+				tabPions[i][j] = 1;		// mettre des pions dans toutes les cases
+			}
+		}
+		tabPions[3][3] = 0;
+	}
+
+	public void initPlateauCoeur(){
+		for (int i = 0; i < 7 ; i++){
+			for (int j = 0; j < 7; j++){
+				tabPions[i][j] = 1;		// mettre des pions dans toutes les cases
+			}
+		}
+		tabPions[0][0] = -1;
+		tabPions[3][0] = -1;
+		tabPions[6][0] = -1;
+		tabPions[0][3] = -1;
+		tabPions[3][3] = 0;
+		tabPions[6][3] = -1;
+		tabPions[0][5] = -1;
+		tabPions[1][5] = -1;
+		tabPions[5][5] = -1;
+		tabPions[6][5] = -1;
+		tabPions[0][4] = -1;
+		tabPions[6][4] = -1;
+		tabPions[0][6] = -1;
+		tabPions[1][6] = -1;
+		tabPions[2][6] = -1;
+		tabPions[4][6] = -1;
+		tabPions[5][6] = -1;
+		tabPions[6][6] = -1;		
+	}
+
+	public void initPlateauMoz(){
+		for (int i = 0; i < 7 ; i++){
+			for (int j = 0; j < 7; j++){
+				tabPions[i][j] = 1;		// mettre des pions dans toutes les cases
+			}
+		}
+		for (int i = 2; i < 5; i++){
+			int j = 0;
+			tabPions[i][j] = -1;
+		}
+		for (int i = 2; i < 5; i++){
+			int j = 6;
+			tabPions[i][j] = -1;
+		}
+		for (int j = 2; j < 5; j++){
+			int i = 0;
+			tabPions[i][j] = -1;
+		}
+		for (int j = 2; j < 5; j++){
+			int i = 6;
+			tabPions[i][j] = -1;
+		}
+		tabPions[2][2] = 0;
+		tabPions[2][4] = 0;
+		tabPions[4][2] = 0;
+		tabPions[4][4] = 0;
+		tabPions[3][3] = 0;
+	}
+	public void initPlateauSmiley(){
+		for (int i = 0; i < 7 ; i++){
+			for (int j = 0; j < 7; j++){
+				tabPions[i][j] = 1;		// mettre des pions dans toutes les cases
+			}
+		}
+		tabPions[0][0] = -1;
+		tabPions[0][1] = -1;
+		tabPions[1][0] = -1;
+		tabPions[6][0] = -1;
+		tabPions[5][0] = -1;
+		tabPions[6][1] = -1;
+		tabPions[0][6] = -1;
+		tabPions[0][5] = -1;
+		tabPions[1][6] = -1;
+		tabPions[6][6] = -1;
+		tabPions[5][6] = -1;
+		tabPions[6][5] = -1;
+		tabPions[2][2] = 0;
+		tabPions[4][2] = 0;
+		for (int i = 2; i<5 ; i++){
+			int j = 4;
+			tabPions[i][j] = 0;
+		}
+	}
+
+	public void choixPlateau(int choix){
+		switch (choix) {
+		case 1 : initPlateauCroix();
+		case 2 : initPlateauCarre();
+		case 3 : initPlateauCoeur();
+		case 4 : initPlateauMoz();
+		case 5 : initPlateauSmiley();
+		}
+	}
+
 	public void recommencer(){
-		initPlateau();
-		this.nombreCoups = 0;
-		this.nombrePions = 32;
+		choixPlateau(menu.getChoix());
+		/*this.nombreCoups = 0;
+		this.nombrePions = 32;*/
 	}
 
 	public int sautPion(int x1, int y1, int x2, int y2){
