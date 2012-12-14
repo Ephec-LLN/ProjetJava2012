@@ -58,9 +58,7 @@ public class PlateauUI extends JPanel {
 			for (int j = 0; j<7; j++) {
 				tabPions[i][j].setIcon(new ImageIcon(tabCheminImg[0]));
 				if (plateauTech.tabPions[i][j] == 0) 	
-					//tabPions[i][j].setIcon(new ImageIcon(tabCheminImg[1]));
-					tabPions[i][j].setVisible(false);
-					tabPions[i][j].setOpaque(false);
+					tabPions[i][j].setIcon(new ImageIcon(tabCheminImg[1]));
 			}
 		}
 	}
