@@ -44,7 +44,7 @@ public class PlateauUI extends JPanel {
 				tabPions[i][j].setBorder(null);
 				tabPions[i][j].setContentAreaFilled(false);
 				tabPions[i][j].addMouseListener(tabPions[i][j]);
-				tabPions[i][j].setBorder(BorderFactory.createLineBorder(Color.WHITE,2));
+				tabPions[i][j].setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
 				JPanel1Layout.setConstraints(tabPions[i][j],gridbag);
 				this.add(tabPions[i][j]);
 			}
@@ -99,11 +99,11 @@ public class PlateauUI extends JPanel {
 			else
 			{
 				if ((plateauTech.sautPion(PionSelect.l,PionSelect.c,this.l,this.c) == 1)){
-					PionSelect.setBorder(BorderFactory.createLineBorder(Color.WHITE,2));
+					PionSelect.setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
 					PionSelect = null;
 				}
 				else {
-					PionSelect.setBorder(BorderFactory.createLineBorder(Color.WHITE,2));
+					PionSelect.setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
 					PionSelect = this;
 					if (plateauTech.tabPions[this.l][this.c] == 1){
 						this.setBorder(BorderFactory.createLineBorder(Color.BLUE,2));
@@ -126,7 +126,7 @@ public class PlateauUI extends JPanel {
 		public void mouseExited(MouseEvent arg0) {
 
 			if (this != PionSelect){
-				this.setBorder(BorderFactory.createLineBorder(Color.WHITE,2));
+				this.setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
 			}
 			majPlateau();
 		}

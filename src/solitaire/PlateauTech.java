@@ -15,7 +15,8 @@ public class PlateauTech {
 	protected int[][] tabPions = new int [7][7];
 
 	public PlateauTech(){
-		initPlateauCroix();
+		menu = new Menu(this);
+		menu.choixPlateau(2);
 		System.out.println("initdébutPlateau");
 	} //Fin PlateauTech
 
@@ -135,23 +136,8 @@ public class PlateauTech {
 		}
 	}
 
-	/*public void choixPlateau(int choix){
-		switch (choix) {
-		case 1 : initPlateauCroix();
-				 break;
-		case 2 : initPlateauCarre();
-				 break;
-		case 3 : initPlateauCoeur();
-				 break;
-		case 4 : initPlateauMoz();
-				 break;
-		case 5 : initPlateauSmiley();
-				 break;
-		}
-	}*/
-
 	public void recommencer(){
-		initPlateauCroix();
+		menu.choixPlateau(2);
 		System.out.println("recommencer");
 		/*this.nombreCoups = 0;
 		this.nombrePions = 32;*/

@@ -16,7 +16,7 @@ public class Menu extends JMenuBar {
 	private static final long serialVersionUID = 1L;
 	private PlateauTech plateau;
 	private PlateauUI pUI;
-	private int choix = 2;
+	private int[] tabChoix= {1,2,3,4,5};
 
 	private static final String Aide = "Règles du jeu\n" +
 			"-------------\n\n"+
@@ -31,6 +31,7 @@ public class Menu extends JMenuBar {
 	public Menu(final PlateauTech plateau) {
 		super();
 		this.plateau = plateau;
+		pUI = new PlateauUI(plateau);
 
 		JMenuItem partie = new JMenuItem("Nouvelle Partie");
 		partie.addActionListener(new ActionListener() {
@@ -65,8 +66,7 @@ public class Menu extends JMenuBar {
 		JMenuItem croix = new JMenuItem("Croix");
 		croix.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				choix = 1;
-				plateau.recommencer();
+				choixPlateau(tabChoix[0]);
 				repaint();
 				revalidate();
 			}
@@ -74,30 +74,21 @@ public class Menu extends JMenuBar {
 		submenu.add(croix);
 
 		JMenuItem carre = new JMenuItem("Carre");
-		croix.addItemListener(new ItemListener(){
-			/*	public void actionPerformed(ActionEvent e){
-					choix = 2;
-					plateau.recommencer();
+		carre.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+					choixPlateau(tabChoix[1]);
+					System.out.println("carre");
 					repaint();
 					revalidate();
-				}*/
-
-			@Override
-			public void itemStateChanged(ItemEvent arg0) {
-				choix = 2;
-				plateau.recommencer();
-				repaint();
-				revalidate();
-				System.out.println("test changement plateau");
-			}
+				}
 		});
+
 		submenu.add(carre);
 
 		JMenuItem coeur = new JMenuItem("Coeur");
-		croix.addActionListener(new ActionListener(){
+		coeur.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				choix = 3;
-				plateau.recommencer();
+				choixPlateau(tabChoix[2]);
 				repaint();
 				revalidate();
 			}
@@ -106,10 +97,9 @@ public class Menu extends JMenuBar {
 
 
 		JMenuItem moz = new JMenuItem("Mozaique");
-		croix.addActionListener(new ActionListener(){
+		moz.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				choix = 4;
-				plateau.recommencer();
+				choixPlateau(tabChoix[3]);
 				repaint();
 				revalidate();				
 			}
@@ -117,10 +107,9 @@ public class Menu extends JMenuBar {
 		submenu.add(moz);
 
 		JMenuItem smiley = new JMenuItem("Smiley");
-		croix.addActionListener(new ActionListener(){
+		smiley.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				choix = 5;
-				plateau.recommencer();
+				choixPlateau(tabChoix[4]);
 				repaint();
 				revalidate();					
 			}
@@ -130,16 +119,13 @@ public class Menu extends JMenuBar {
 		this.add(perso);
 	}
 
-	public  int getChoix() {
-		return choix;
-	}
 	public void choixPlateau(int choix){
 		switch (choix) {
-		case 1 : plateau.initPlateauCroix(); pUI.majPlateau(); break;
-		case 2 : plateau.initPlateauCarre(); pUI.majPlateau();break;
-		case 3 : plateau.initPlateauCoeur(); pUI.majPlateau();break;
-		case 4 : plateau.initPlateauMoz(); pUI.majPlateau();break;
-		case 5 : plateau.initPlateauSmiley(); pUI.majPlateau();break;
+		case 1 : pUI.majPlateau();plateau.initPlateauCroix(); break;
+		case 2 : pUI.majPlateau();plateau.initPlateauCarre();break;
+		case 3 : pUI.majPlateau();plateau.initPlateauCoeur();break;
+		case 4 : pUI.majPlateau();plateau.initPlateauMoz();break;
+		case 5 : pUI.majPlateau();plateau.initPlateauSmiley();break;
 		}
 	}
 
