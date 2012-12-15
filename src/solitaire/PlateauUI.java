@@ -24,7 +24,7 @@ public class PlateauUI extends JPanel {
 	private int nbLignes=7;
 	private int nbColonnes=7;
 	private Pion[][] tabPions = new Pion[nbColonnes][nbLignes];
-	private String[] tabCheminImg = {"images/solitairePionsTransp.gif", "images/solitaireVidesTransp.gif", "images/laurent.gif"};
+	private String[] tabCheminImg = {"images/solitairePionsTransp.gif", "images/solitaireVidesTransp.gif", "images/laurent.gif", "images/jonathan.gif"};
 	private String cheminImg;
 
 	public PlateauUI(PlateauTech pT){
@@ -57,11 +57,11 @@ public class PlateauUI extends JPanel {
 
 	public void majPlateau() {
 
-		for(int i = 0;i <7;i++) {
+		for(int i = 0;i <7; i++) {
 			for (int j = 0; j<7; j++) {
 				tabPions[i][j].setVisible(true);
 				if(plateauTech.tabPions[i][j] == 1) {
-					tabPions[i][j].setIcon(new ImageIcon(tabCheminImg[menu.getChoixImg()]));
+					tabPions[i][j].setIcon(new ImageIcon(tabCheminImg[2]));
 					if (menu.getChoixImg() == 0){
 					System.out.println("pion normaux majPlateau");
 					}else{
@@ -78,6 +78,30 @@ public class PlateauUI extends JPanel {
 				}
 
 			}
+			i=i+1;
+		}
+		for(int i = 1;i <7;i++) {
+			for (int j = 0; j<7; j++) {
+				tabPions[i][j].setVisible(true);
+				if(plateauTech.tabPions[i][j] == 1) {
+					tabPions[i][j].setIcon(new ImageIcon(tabCheminImg[3]));
+					if (menu.getChoixImg() == 0){
+					System.out.println("pion normaux majPlateau");
+					}else{
+						System.out.println("pion laurent majPlateau");
+					}
+				}
+				else {
+					if (plateauTech.tabPions[i][j] == 0) {
+						tabPions[i][j].setIcon(new ImageIcon(tabCheminImg[1]));
+					}
+					else {
+						tabPions[i][j].setVisible(false);
+					}
+				}
+
+			}
+			i=i+1;
 		}
 	}
 
