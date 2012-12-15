@@ -16,6 +16,7 @@ public class PlateauTech {
 
 	public PlateauTech(){
 		initPlateauCroix();
+		System.out.println("initdébutPlateau");
 	} //Fin PlateauTech
 
 	// 1 = Pion present ; 0 = Pion absent ; -1 = Pion interdit
@@ -149,7 +150,8 @@ public class PlateauTech {
 	}*/
 
 	public void recommencer(){
-		menu.choixPlateau(2);
+		initPlateauCroix();
+		System.out.println("recommencer");
 		/*this.nombreCoups = 0;
 		this.nombrePions = 32;*/
 	}
