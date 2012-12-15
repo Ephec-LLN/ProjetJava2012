@@ -2,8 +2,6 @@ package solitaire;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -16,7 +14,7 @@ public class Menu extends JMenuBar {
 	private static final long serialVersionUID = 1L;
 	private PlateauTech plateau;
 	private PlateauUI pUI;
-	private int[] tabChoix= {1,2,3,4,5};
+	private int choix = 1;
 
 	private static final String Aide = "Règles du jeu\n" +
 			"-------------\n\n"+
@@ -38,7 +36,7 @@ public class Menu extends JMenuBar {
 			public void actionPerformed(ActionEvent e) {
 				int reply = JOptionPane.showConfirmDialog(null, "Recommencer?", "Nouvelle Partie",  JOptionPane.YES_NO_OPTION);
 				if (reply == JOptionPane.YES_OPTION) {
-					plateau.recommencer();
+					choixPlateau(choix);
 				}
 			}
 		});
@@ -66,7 +64,8 @@ public class Menu extends JMenuBar {
 		JMenuItem croix = new JMenuItem("Croix");
 		croix.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				choixPlateau(tabChoix[0]);
+				choix = 1;
+				choixPlateau(choix);
 				repaint();
 				revalidate();
 			}
@@ -76,7 +75,8 @@ public class Menu extends JMenuBar {
 		JMenuItem carre = new JMenuItem("Carre");
 		carre.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					choixPlateau(tabChoix[1]);
+					choix = 2;
+					choixPlateau(choix);
 					System.out.println("carre");
 					repaint();
 					revalidate();
@@ -88,7 +88,8 @@ public class Menu extends JMenuBar {
 		JMenuItem coeur = new JMenuItem("Coeur");
 		coeur.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				choixPlateau(tabChoix[2]);
+				choix = 3;
+				choixPlateau(choix);
 				repaint();
 				revalidate();
 			}
@@ -99,7 +100,8 @@ public class Menu extends JMenuBar {
 		JMenuItem moz = new JMenuItem("Mozaique");
 		moz.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				choixPlateau(tabChoix[3]);
+				choix = 4;
+				choixPlateau(choix);
 				repaint();
 				revalidate();				
 			}
@@ -109,7 +111,8 @@ public class Menu extends JMenuBar {
 		JMenuItem smiley = new JMenuItem("Smiley");
 		smiley.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				choixPlateau(tabChoix[4]);
+				choix = 5;
+				choixPlateau(choix);
 				repaint();
 				revalidate();					
 			}

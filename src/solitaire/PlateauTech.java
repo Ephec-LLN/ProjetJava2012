@@ -16,7 +16,7 @@ public class PlateauTech {
 
 	public PlateauTech(){
 		menu = new Menu(this);
-		menu.choixPlateau(2);
+		menu.choixPlateau(1);
 		System.out.println("initdébutPlateau");
 	} //Fin PlateauTech
 
@@ -134,13 +134,6 @@ public class PlateauTech {
 			int j = 4;
 			tabPions[i][j] = 0;
 		}
-	}
-
-	public void recommencer(){
-		menu.choixPlateau(2);
-		System.out.println("recommencer");
-		/*this.nombreCoups = 0;
-		this.nombrePions = 32;*/
 	}
 
 	public int sautPion(int x1, int y1, int x2, int y2){
