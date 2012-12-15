@@ -13,8 +13,12 @@ public class Menu extends JMenuBar {
 
 	private static final long serialVersionUID = 1L;
 	private PlateauTech plateau;
-	private PlateauUI pUI;
 	private int choix = 1;
+	private int choixImg;
+	private boolean pionNormal = true;
+	private String[] tabCheminImg = {"images/solitairePionsTransp.gif", "images/solitaireVidesTransp.gif", "images/laurent.gif"};
+
+	
 
 	private static final String Aide = "Règles du jeu\n" +
 			"-------------\n\n"+
@@ -28,15 +32,15 @@ public class Menu extends JMenuBar {
 
 	public Menu(final PlateauTech plateau) {
 		super();
+		
 		this.plateau = plateau;
-		pUI = new PlateauUI(plateau);
 
 		JMenuItem partie = new JMenuItem("Nouvelle Partie");
 		partie.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int reply = JOptionPane.showConfirmDialog(null, "Recommencer?", "Nouvelle Partie",  JOptionPane.YES_NO_OPTION);
 				if (reply == JOptionPane.YES_OPTION) {
-					choixPlateau(choix);
+					plateau.choixPlateau(choix);
 				}
 			}
 		});
@@ -60,12 +64,12 @@ public class Menu extends JMenuBar {
 
 		JMenu perso = new JMenu("Personnalisation");
 		JMenu submenu = new JMenu("Plateau");
-		
+
 		JMenuItem croix = new JMenuItem("Croix");
 		croix.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				choix = 1;
-				choixPlateau(choix);
+				plateau.choixPlateau(choix);
 				repaint();
 				revalidate();
 			}
@@ -74,13 +78,13 @@ public class Menu extends JMenuBar {
 
 		JMenuItem carre = new JMenuItem("Carre");
 		carre.addActionListener(new ActionListener(){
-				public void actionPerformed(ActionEvent e){
-					choix = 2;
-					choixPlateau(choix);
-					System.out.println("carre");
-					repaint();
-					revalidate();
-				}
+			public void actionPerformed(ActionEvent e){
+				choix = 2;
+				plateau.choixPlateau(choix);
+				System.out.println("carre");
+				repaint();
+				revalidate();
+			}
 		});
 
 		submenu.add(carre);
@@ -89,7 +93,7 @@ public class Menu extends JMenuBar {
 		coeur.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				choix = 3;
-				choixPlateau(choix);
+				plateau.choixPlateau(choix);
 				repaint();
 				revalidate();
 			}
@@ -101,7 +105,7 @@ public class Menu extends JMenuBar {
 		moz.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				choix = 4;
-				choixPlateau(choix);
+				plateau.choixPlateau(choix);
 				repaint();
 				revalidate();				
 			}
@@ -112,17 +116,66 @@ public class Menu extends JMenuBar {
 		smiley.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				choix = 5;
-				choixPlateau(choix);
+				plateau.choixPlateau(choix);
 				repaint();
 				revalidate();					
 			}
 		});
 		submenu.add(smiley);
 		perso.add(submenu);
+		JMenu submenu2 = new JMenu("Pions");
+
+		JMenuItem normal = new JMenuItem("Pions normaux");
+		normal.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				setChoixImg(0);
+				System.out.println(getChoixImg());
+
+				System.out.println("pion normal");
+			}
+		});	
+		submenu2.add(normal);
+		JMenuItem laurent = new JMenuItem("Pions Laurent");
+		laurent.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				setChoixImg(2);
+				System.out.println(getChoixImg());
+				System.out.println("pion Laurent Menu");
+			}
+		});	
+		submenu2.add(laurent);
+		perso.add(submenu2);
 		this.add(perso);
 	}
 
-	public void choixPlateau(int choix){
+
+	public int getChoixImg() {
+		return choixImg;
+	}
+
+
+	public int getChoix() {
+		return choix;
+	}
+
+
+	public void setChoixImg(int choixImg) {
+		
+		this.choixImg = choixImg;
+	}
+
+
+	public void setChoix(int choix) {
+		this.choix = choix;
+	}
+	
+
+
+
+
+
+
+/*	public void choixPlateau(int choix){
 		switch (choix) {
 		case 1 : pUI.majPlateau();plateau.initPlateauCroix(); break;
 		case 2 : pUI.majPlateau();plateau.initPlateauCarre();break;
@@ -130,6 +183,8 @@ public class Menu extends JMenuBar {
 		case 4 : pUI.majPlateau();plateau.initPlateauMoz();break;
 		case 5 : pUI.majPlateau();plateau.initPlateauSmiley();break;
 		}
-	}
+	}*/
+
+
 
 }

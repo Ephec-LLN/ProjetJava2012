@@ -11,12 +11,14 @@ public class PlateauTech {
 	private int nombreCoups = 0;
 	private int nombrePions = 32;   // initial : 32 pions
 	private Menu menu;
+	private PlateauUI pUI;
 
 	protected int[][] tabPions = new int [7][7];
 
 	public PlateauTech(){
 		menu = new Menu(this);
-		menu.choixPlateau(1);
+		pUI = new PlateauUI(this);
+		choixPlateau(1);
 		System.out.println("initdébutPlateau");
 	} //Fin PlateauTech
 
@@ -136,6 +138,13 @@ public class PlateauTech {
 		}
 	}
 
+	public void recommencer(){
+		choixPlateau(1);
+		System.out.println("recommencer");
+		/*this.nombreCoups = 0;
+		this.nombrePions = 32;*/
+	}
+
 	public int sautPion(int x1, int y1, int x2, int y2){
 		int xM = (x1+x2)/2; // coordonnee en x du pion au dessus duquel on saute
 		int yM = (y1+y2)/2; // coordonnee en y du pion au dessus duquel on saute
@@ -149,6 +158,15 @@ public class PlateauTech {
 			return 1;
 		} else return -1;
 
+	}
+	public void choixPlateau(int choix){
+		switch (choix) {
+		case 1 : pUI.majPlateau();initPlateauCroix(); break;
+		case 2 : pUI.majPlateau();initPlateauCarre();break;
+		case 3 : pUI.majPlateau();initPlateauCoeur();break;
+		case 4 : pUI.majPlateau();initPlateauMoz();break;
+		case 5 : pUI.majPlateau();initPlateauSmiley();break;
+		}
 	}
 
 	public int getNombrePions() {

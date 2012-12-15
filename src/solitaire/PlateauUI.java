@@ -20,14 +20,17 @@ public class PlateauUI extends JPanel {
 	private static final long serialVersionUID = 745306872625426774L;
 	private PlateauTech plateauTech;
 	private Pion PionSelect = null;
+	private Menu menu;
 	private int nbLignes=7;
 	private int nbColonnes=7;
 	private Pion[][] tabPions = new Pion[nbColonnes][nbLignes];
-	private String[] tabCheminImg = {"images/solitairePionsTransp.gif", "images/solitaireVidesTransp.gif"};
+	private String[] tabCheminImg = {"images/solitairePionsTransp.gif", "images/solitaireVidesTransp.gif", "images/laurent.gif"};
+	private String cheminImg;
 
 	public PlateauUI(PlateauTech pT){
-
+		super();
 		this.plateauTech = pT;
+		menu = new Menu (pT);
 		GridBagLayout JPanel1Layout = new GridBagLayout();
 		setLayout(JPanel1Layout);
 		this.setOpaque(false);
@@ -53,11 +56,17 @@ public class PlateauUI extends JPanel {
 	}
 
 	public void majPlateau() {
+
 		for(int i = 0;i <7;i++) {
 			for (int j = 0; j<7; j++) {
 				tabPions[i][j].setVisible(true);
 				if(plateauTech.tabPions[i][j] == 1) {
-					tabPions[i][j].setIcon(new ImageIcon(tabCheminImg[0]));
+					tabPions[i][j].setIcon(new ImageIcon(tabCheminImg[menu.getChoixImg()]));
+					if (menu.getChoixImg() == 0){
+					System.out.println("pion normaux majPlateau");
+					}else{
+						System.out.println("pion laurent majPlateau");
+					}
 				}
 				else {
 					if (plateauTech.tabPions[i][j] == 0) {
@@ -71,78 +80,82 @@ public class PlateauUI extends JPanel {
 			}
 		}
 	}
-	public class Pion extends JButton implements MouseListener{
 
-		/**
-		 * 
-		 */
-		private static final long serialVersionUID = 1L;
-
-		int l;    	//Ligne
-		int c;		//Colonne
-
-		public Pion(int ligne, int colonne) {
-			l = ligne;
-			c = colonne;
-			setPreferredSize(new Dimension(61,61));
-			setSize(getPreferredSize());
-
-		}
+	
 
 
-		@Override
-		public void mouseClicked(MouseEvent arg0) {
+public class Pion extends JButton implements MouseListener{
 
-			if (PionSelect == null && plateauTech.tabPions[this.l][this.c] == 1)  {
-				PionSelect = this;
-				PionSelect.setBorder(BorderFactory.createLineBorder(Color.BLUE,2));
-			} 
-			else
-			{
-				if ((plateauTech.sautPion(PionSelect.l,PionSelect.c,this.l,this.c) == 1)){
-					PionSelect.setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
-					PionSelect = null;
-				}
-				else {
-					PionSelect.setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
-					PionSelect = this;
-					if (plateauTech.tabPions[this.l][this.c] == 1){
-						this.setBorder(BorderFactory.createLineBorder(Color.BLUE,2));
-					}
-				}	
-			}
-			majPlateau();
-		}
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
-		@Override
-		public void mouseEntered(MouseEvent arg0) {
+	int l;    	//Ligne
+	int c;		//Colonne
 
-			if (this != PionSelect){
-				this.setBorder(BorderFactory.createLineBorder(Color.GREEN,2));
-			}
-			majPlateau();
-		}
+	public Pion(int ligne, int colonne) {
+		l = ligne;
+		c = colonne;
+		setPreferredSize(new Dimension(61,61));
+		setSize(getPreferredSize());
 
-		@Override
-		public void mouseExited(MouseEvent arg0) {
-
-			if (this != PionSelect){
-				this.setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
-			}
-			majPlateau();
-		}
-
-		@Override
-		public void mousePressed(MouseEvent arg0) {
-			// TODO Auto-generated method stub
-
-		}
-
-		@Override
-		public void mouseReleased(MouseEvent arg0) {
-			// TODO Auto-generated method stub
-
-		}
 	}
+
+
+	@Override
+	public void mouseClicked(MouseEvent arg0) {
+
+		if (PionSelect == null && plateauTech.tabPions[this.l][this.c] == 1)  {
+			PionSelect = this;
+			PionSelect.setBorder(BorderFactory.createLineBorder(Color.BLUE,4));
+		} 
+		else
+		{
+			if ((plateauTech.sautPion(PionSelect.l,PionSelect.c,this.l,this.c) == 1)){
+				PionSelect.setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
+				PionSelect = null;
+			}
+			else {
+				PionSelect.setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
+				PionSelect = this;
+				if (plateauTech.tabPions[this.l][this.c] == 1){
+					this.setBorder(BorderFactory.createLineBorder(Color.BLUE,4));
+				}
+			}	
+		}
+		majPlateau();
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent arg0) {
+
+		if (this != PionSelect){
+			this.setBorder(BorderFactory.createLineBorder(Color.GREEN,4));
+		}
+		majPlateau();
+	}
+
+	@Override
+	public void mouseExited(MouseEvent arg0) {
+
+		if (this != PionSelect){
+			this.setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
+		}
+		majPlateau();
+	}
+
+	@Override
+	public void mousePressed(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+
+	}
+}
 }
 
