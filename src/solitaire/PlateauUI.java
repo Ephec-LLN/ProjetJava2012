@@ -7,7 +7,6 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.Random;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -24,13 +23,11 @@ public class PlateauUI extends JPanel {
 	private int nbLignes=7;
 	private int nbColonnes=7;
 	private Pion[][] tabPions = new Pion[nbColonnes][nbLignes];
-	private String[] tabCheminImg = {"images/solitairePionsTransp.gif", "images/solitaireVidesTransp.gif"};
-	Random random = new Random();
-	int indice = random.nextInt(2);
+	private String[] tabCheminImg = {"images/jonathan.gif","images/laurent.gif", "images/solitaireVidesTransp.gif"};
 
 	public PlateauUI(PlateauTech pT){
 
-		
+
 		this.plateauTech = pT;
 		GridBagLayout JPanel1Layout = new GridBagLayout();
 		setLayout(JPanel1Layout);
@@ -58,25 +55,44 @@ public class PlateauUI extends JPanel {
 
 	public void majPlateau() {
 
-		
-		for(int i = 0;i <7;i++) {
+
+		for(int i = 0;i <7; i++) {
 			for (int j = 0; j<7; j++) {
-				tabPions[i][j].setVisible(true);
-				if(plateauTech.tabPions[i][j] == 1) {
-					tabPions[i][j].setIcon(new ImageIcon(tabCheminImg[indice]));
-				}
+				if((i+j)%2==0){
+					tabPions[i][j].setVisible(true);
+					if(plateauTech.tabPions[i][j] == 1) {
+						tabPions[i][j].setIcon(new ImageIcon(tabCheminImg[0]));
+					}
+					else {
+						if (plateauTech.tabPions[i][j] == 0) {
+							tabPions[i][j].setIcon(new ImageIcon(tabCheminImg[2]));
+						}
+						else {
+							tabPions[i][j].setVisible(false);
+						}
+					}
+				} 
 				else {
-					if (plateauTech.tabPions[i][j] == 0) {
+					tabPions[i][j].setVisible(true);
+					if(plateauTech.tabPions[i][j] == 1) {
 						tabPions[i][j].setIcon(new ImageIcon(tabCheminImg[1]));
 					}
 					else {
-						tabPions[i][j].setVisible(false);
+						if (plateauTech.tabPions[i][j] == 0) {
+							tabPions[i][j].setIcon(new ImageIcon(tabCheminImg[2]));
+						}
+						else {
+							tabPions[i][j].setVisible(false);
+						}
 					}
 				}
-
 			}
 		}
+
+
+
 	}
+	
 	public class Pion extends JButton implements MouseListener{
 
 		/**
@@ -101,7 +117,7 @@ public class PlateauUI extends JPanel {
 
 			if (PionSelect == null && plateauTech.tabPions[this.l][this.c] == 1)  {
 				PionSelect = this;
-				PionSelect.setBorder(BorderFactory.createLineBorder(Color.BLUE,2));
+				PionSelect.setBorder(BorderFactory.createLineBorder(Color.BLUE,4));
 			} 
 			else
 			{
@@ -113,7 +129,7 @@ public class PlateauUI extends JPanel {
 					PionSelect.setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
 					PionSelect = this;
 					if (plateauTech.tabPions[this.l][this.c] == 1){
-						this.setBorder(BorderFactory.createLineBorder(Color.BLUE,2));
+						this.setBorder(BorderFactory.createLineBorder(Color.BLUE,3));
 					}
 				}	
 			}
@@ -124,7 +140,7 @@ public class PlateauUI extends JPanel {
 		public void mouseEntered(MouseEvent arg0) {
 
 			if (this != PionSelect){
-				this.setBorder(BorderFactory.createLineBorder(Color.GREEN,2));
+				this.setBorder(BorderFactory.createLineBorder(Color.GREEN,4));
 			}
 			majPlateau();
 		}
