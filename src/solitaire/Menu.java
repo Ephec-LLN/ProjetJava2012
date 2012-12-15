@@ -48,7 +48,6 @@ public class Menu extends JMenuBar {
 				JOptionPane.showMessageDialog(null,Aide,"Aide",JOptionPane.INFORMATION_MESSAGE);
 			}
 		});	
-		this.add(aide);
 
 		JMenuItem apd = new JMenuItem("A propos");
 		apd.addActionListener(new ActionListener() {
@@ -56,7 +55,6 @@ public class Menu extends JMenuBar {
 				JOptionPane.showMessageDialog(null,"Decembre 2012\nAuteurs : Jonathan et Laurent","A propos",JOptionPane.INFORMATION_MESSAGE);
 			}
 		});	
-		this.add(apd);
 
 		JMenu perso = new JMenu("Personnalisation");
 		JMenu submenu = new JMenu("Plateau");
@@ -120,6 +118,8 @@ public class Menu extends JMenuBar {
 		submenu.add(smiley);
 		perso.add(submenu);
 		this.add(perso);
+		this.add(aide);
+		this.add(apd);
 	}
 
 	public void choixPlateau(int choix){
