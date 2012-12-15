@@ -7,6 +7,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.Random;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -24,9 +25,12 @@ public class PlateauUI extends JPanel {
 	private int nbColonnes=7;
 	private Pion[][] tabPions = new Pion[nbColonnes][nbLignes];
 	private String[] tabCheminImg = {"images/solitairePionsTransp.gif", "images/solitaireVidesTransp.gif"};
+	Random random = new Random();
+	int indice = random.nextInt(2);
 
 	public PlateauUI(PlateauTech pT){
 
+		
 		this.plateauTech = pT;
 		GridBagLayout JPanel1Layout = new GridBagLayout();
 		setLayout(JPanel1Layout);
@@ -53,11 +57,13 @@ public class PlateauUI extends JPanel {
 	}
 
 	public void majPlateau() {
+
+		
 		for(int i = 0;i <7;i++) {
 			for (int j = 0; j<7; j++) {
 				tabPions[i][j].setVisible(true);
 				if(plateauTech.tabPions[i][j] == 1) {
-					tabPions[i][j].setIcon(new ImageIcon(tabCheminImg[0]));
+					tabPions[i][j].setIcon(new ImageIcon(tabCheminImg[indice]));
 				}
 				else {
 					if (plateauTech.tabPions[i][j] == 0) {

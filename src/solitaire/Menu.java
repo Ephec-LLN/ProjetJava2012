@@ -62,8 +62,11 @@ public class Menu extends JMenuBar {
 		JMenuItem croix = new JMenuItem("Croix");
 		croix.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				choix = 1;
-				choixPlateau(choix);
+				int reply = JOptionPane.showConfirmDialog(null, "Votre partie sera perdue", "changer de plateau?",  JOptionPane.YES_NO_OPTION);
+				if (reply == JOptionPane.YES_OPTION) {
+					choix = 1;
+					choixPlateau(choix);
+				}
 				repaint();
 				revalidate();
 			}
@@ -73,9 +76,11 @@ public class Menu extends JMenuBar {
 		JMenuItem carre = new JMenuItem("Carre");
 		carre.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					choix = 2;
-					choixPlateau(choix);
-					System.out.println("carre");
+					int reply = JOptionPane.showConfirmDialog(null, "Votre partie sera perdue", "changer de plateau?",  JOptionPane.YES_NO_OPTION);
+					if (reply == JOptionPane.YES_OPTION) {
+						choix = 2;
+						choixPlateau(choix);
+					}
 					repaint();
 					revalidate();
 				}
@@ -86,8 +91,11 @@ public class Menu extends JMenuBar {
 		JMenuItem coeur = new JMenuItem("Coeur");
 		coeur.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				choix = 3;
-				choixPlateau(choix);
+				int reply = JOptionPane.showConfirmDialog(null, "Votre partie sera perdue", "changer de plateau?",  JOptionPane.YES_NO_OPTION);
+				if (reply == JOptionPane.YES_OPTION) {
+					choix = 3;
+					choixPlateau(choix);
+				}
 				repaint();
 				revalidate();
 			}
@@ -98,8 +106,11 @@ public class Menu extends JMenuBar {
 		JMenuItem moz = new JMenuItem("Mozaique");
 		moz.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				choix = 4;
-				choixPlateau(choix);
+				int reply = JOptionPane.showConfirmDialog(null, "Votre partie sera perdue", "changer de plateau?",  JOptionPane.YES_NO_OPTION);
+				if (reply == JOptionPane.YES_OPTION) {
+					choix = 4;
+					choixPlateau(choix);
+				}
 				repaint();
 				revalidate();				
 			}
@@ -109,8 +120,11 @@ public class Menu extends JMenuBar {
 		JMenuItem smiley = new JMenuItem("Smiley");
 		smiley.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				choix = 5;
-				choixPlateau(choix);
+				int reply = JOptionPane.showConfirmDialog(null, "Votre partie sera perdue", "changer de plateau?",  JOptionPane.YES_NO_OPTION);
+				if (reply == JOptionPane.YES_OPTION) {
+					choix = 5;
+					choixPlateau(choix);
+				}
 				repaint();
 				revalidate();					
 			}
