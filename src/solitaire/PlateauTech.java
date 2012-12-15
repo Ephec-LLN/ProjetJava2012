@@ -108,6 +108,7 @@ public class PlateauTech {
 		tabPions[4][4] = 0;
 		tabPions[3][3] = 0;
 	}
+	
 	public void initPlateauSmiley(){
 		for (int i = 0; i < 7 ; i++){
 			for (int j = 0; j < 7; j++){
