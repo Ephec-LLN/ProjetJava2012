@@ -17,7 +17,6 @@ public class PlateauTech {
 	public PlateauTech(){
 		menu = new Menu(this);
 		menu.choixPlateau(1);
-		System.out.println("initdébutPlateau");
 	} //Fin PlateauTech
 
 	// 1 = Pion present ; 0 = Pion absent ; -1 = Pion interdit

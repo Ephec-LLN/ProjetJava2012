@@ -19,7 +19,7 @@ public class Jeu {
 		jeu.add(pUI, BorderLayout.CENTER);
 		jeu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jeu.setResizable(false);
-		jeu.setSize(500,500);
+		jeu.setSize(550,550);
 		jeu.setLocationRelativeTo(null);
 		jeu.setVisible(true);
 	}

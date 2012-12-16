@@ -2,11 +2,14 @@ package solitaire;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import javax.swing.KeyStroke;
 
 
 public class Menu extends JMenuBar {
@@ -31,7 +34,8 @@ public class Menu extends JMenuBar {
 		this.plateau = plateau;
 		pUI = new PlateauUI(plateau);
 
-		JMenuItem partie = new JMenuItem("Nouvelle Partie");
+		JMenuItem partie = new JMenuItem("Recommencer");
+		partie.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N,InputEvent.CTRL_MASK));
 		partie.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int reply = JOptionPane.showConfirmDialog(null, "Recommencer?", "Nouvelle Partie",  JOptionPane.YES_NO_OPTION);
@@ -43,6 +47,7 @@ public class Menu extends JMenuBar {
 		this.add(partie);
 
 		JMenuItem aide = new JMenuItem("Aide");
+		aide.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_H,InputEvent.CTRL_MASK));
 		aide.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null,Aide,"Aide",JOptionPane.INFORMATION_MESSAGE);
@@ -60,6 +65,7 @@ public class Menu extends JMenuBar {
 		JMenu submenu = new JMenu("Plateau");
 		
 		JMenuItem croix = new JMenuItem("Croix");
+		croix.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X,InputEvent.CTRL_MASK));
 		croix.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				int reply = JOptionPane.showConfirmDialog(null, "Votre partie sera perdue", "changer de plateau?",  JOptionPane.YES_NO_OPTION);
@@ -74,6 +80,7 @@ public class Menu extends JMenuBar {
 		submenu.add(croix);
 
 		JMenuItem carre = new JMenuItem("Carre");
+		carre.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_E,InputEvent.CTRL_MASK));
 		carre.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e){
 					int reply = JOptionPane.showConfirmDialog(null, "Votre partie sera perdue", "changer de plateau?",  JOptionPane.YES_NO_OPTION);
@@ -89,6 +96,7 @@ public class Menu extends JMenuBar {
 		submenu.add(carre);
 
 		JMenuItem coeur = new JMenuItem("Coeur");
+		coeur.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_R,InputEvent.CTRL_MASK));
 		coeur.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				int reply = JOptionPane.showConfirmDialog(null, "Votre partie sera perdue", "changer de plateau?",  JOptionPane.YES_NO_OPTION);
@@ -104,6 +112,7 @@ public class Menu extends JMenuBar {
 
 
 		JMenuItem moz = new JMenuItem("Mozaique");
+		moz.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_M,InputEvent.CTRL_MASK));
 		moz.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				int reply = JOptionPane.showConfirmDialog(null, "Votre partie sera perdue", "changer de plateau?",  JOptionPane.YES_NO_OPTION);
@@ -118,6 +127,7 @@ public class Menu extends JMenuBar {
 		submenu.add(moz);
 
 		JMenuItem smiley = new JMenuItem("Smiley");
+		smiley.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S,InputEvent.CTRL_MASK));
 		smiley.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				int reply = JOptionPane.showConfirmDialog(null, "Votre partie sera perdue", "changer de plateau?",  JOptionPane.YES_NO_OPTION);
@@ -138,11 +148,11 @@ public class Menu extends JMenuBar {
 
 	public void choixPlateau(int choix){
 		switch (choix) {
-		case 1 : pUI.majPlateau();plateau.initPlateauCroix(); break;
-		case 2 : pUI.majPlateau();plateau.initPlateauCarre();break;
-		case 3 : pUI.majPlateau();plateau.initPlateauCoeur();break;
-		case 4 : pUI.majPlateau();plateau.initPlateauMoz();break;
-		case 5 : pUI.majPlateau();plateau.initPlateauSmiley();break;
+		case 1 : plateau.initPlateauCroix(); break;
+		case 2 : plateau.initPlateauCarre();break;
+		case 3 : plateau.initPlateauCoeur();break;
+		case 4 : plateau.initPlateauMoz();break;
+		case 5 : plateau.initPlateauSmiley();break;
 		}
 	}
 
