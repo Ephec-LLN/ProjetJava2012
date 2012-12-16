@@ -3,6 +3,10 @@ package solitaire;
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
 
+/**
+ * Classe initialisant la JFrame, qui contient tous les éléments
+ * @author Laurent & Jonathan
+ */
 public class Jeu {
 
 	public static void main(String[] args) {

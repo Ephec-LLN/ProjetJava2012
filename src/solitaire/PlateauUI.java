@@ -14,6 +14,10 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 
+/**
+ * Classe constituant l'aspect visuel du programme
+ * @author Laurent & Jonathan
+ */
 public class PlateauUI extends JPanel {
 
 
@@ -22,7 +26,12 @@ public class PlateauUI extends JPanel {
 	private Pion PionSelect = null;
 	private int nbLignes=7;
 	private int nbColonnes=7;
+	
+	/** Tableau contenant un certain nombre de cases "pion" */
 	private Pion[][] tabPions = new Pion[nbColonnes][nbLignes];
+	/**
+	 * Tableau reprenant les différents chemins des images utilisées
+	 */
 	private String[] tabCheminImg = {"images/jonathan.gif","images/laurent.gif", "images/solitaireVidesTransp.gif"};
 
 	public PlateauUI(PlateauTech pT){
@@ -53,6 +62,9 @@ public class PlateauUI extends JPanel {
 		majPlateau();
 	}
 
+	/**
+	 * @majPlateau procédure permettant de garder à jour les images constituant le JButton
+	 */
 	public void majPlateau() {
 
 
@@ -93,6 +105,11 @@ public class PlateauUI extends JPanel {
 
 	}
 	
+	/**
+	 * Classe étendue d'un JButton implémentant un MouseListener et définissant la dimension des cases "pion"
+	 * @author Laurent & Jonathan
+	 *
+	 */
 	public class Pion extends JButton implements MouseListener{
 
 		/**

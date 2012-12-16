@@ -2,16 +2,17 @@ package solitaire;
 
 /**
  * @author Laurent et Jonathan
- *@PlateauTech une classe qui genere le plateau niveau technique.
- *Le plateauUI sera dans une autre classe
+ *@PlateauTech genere le plateau de jeu au niveau technique.
  */
 
 public class PlateauTech {
 
-	private int nombreCoups = 0;
-	private int nombrePions = 32;   // initial : 32 pions
 	private Menu menu;
 
+	/**
+	 * tableau contenant des entiers qui permettent de déterminer si une case 
+	 * contient un pion (1), n'en contient pas (0) ou est inaccessible (-1)
+	 */
 	protected int[][] tabPions = new int [7][7];
 
 	public PlateauTech(){
@@ -20,6 +21,9 @@ public class PlateauTech {
 	} //Fin PlateauTech
 
 	// 1 = Pion present ; 0 = Pion absent ; -1 = Pion interdit
+	/**
+	 * initialise un plateau en forme de croix
+	 */
 	public void initPlateauCroix(){
 		for (int i = 0; i < 7 ; i++){
 			for (int j = 0; j < 7; j++){
@@ -44,7 +48,9 @@ public class PlateauTech {
 		}
 		tabPions[3][3] = 0; //Pas de pion au centre du plateau
 	} // fin initPlateau
-
+	/**
+	 * initialise un plateau en forme de carré
+	 */
 	public void initPlateauCarre(){
 		for (int i = 0; i < 7 ; i++){
 			for (int j = 0; j < 7; j++){
@@ -53,7 +59,9 @@ public class PlateauTech {
 		}
 		tabPions[3][3] = 0;
 	}
-
+	/**
+	 * initialise un plateau en forme de coeur
+	 */
 	public void initPlateauCoeur(){
 		for (int i = 0; i < 7 ; i++){
 			for (int j = 0; j < 7; j++){
@@ -79,7 +87,9 @@ public class PlateauTech {
 		tabPions[5][6] = -1;
 		tabPions[6][6] = -1;		
 	}
-
+	/**
+	 * initialise un plateau en forme de mozaïque
+	 */
 	public void initPlateauMoz(){
 		for (int i = 0; i < 7 ; i++){
 			for (int j = 0; j < 7; j++){
@@ -108,7 +118,9 @@ public class PlateauTech {
 		tabPions[4][4] = 0;
 		tabPions[3][3] = 0;
 	}
-	
+	/**
+	 * initialise un plateau en forme de smiley
+	 */
 	public void initPlateauSmiley(){
 		for (int i = 0; i < 7 ; i++){
 			for (int j = 0; j < 7; j++){
@@ -135,6 +147,14 @@ public class PlateauTech {
 		}
 	}
 
+	/**
+	 * permet de jouer un coup
+	 * @param x1 ligne du pion de départ
+	 * @param y1 colonne du pion de départ
+	 * @param x2 ligne du pion après le "saut"
+	 * @param y2 colonne du pion après le "saut"
+	 * @return 1 si possiblité de "sauter" un pion, 0 sinon
+	 */
 	public int sautPion(int x1, int y1, int x2, int y2){
 		int xM = (x1+x2)/2; // coordonnee en x du pion au dessus duquel on saute
 		int yM = (y1+y2)/2; // coordonnee en y du pion au dessus duquel on saute
@@ -143,29 +163,8 @@ public class PlateauTech {
 			tabPions[x1][y1] = 0;    // on "efface" le pion de départ
 			tabPions[xM][yM] = 0;	 // on "efface" le pion "sauté"
 			tabPions[x2][y2] = 1;	 // on "ajoute" le pion de l'arrivée
-			setNombreCoups(getNombreCoups() + 1);
-			nombrePions--;
 			return 1;
 		} else return -1;
 
 	}
-
-	public int getNombrePions() {
-		return nombrePions;
-	}
-
-	public void setNombrePions(int nombrePions) {
-		this.nombrePions = nombrePions;
-	}
-
-	public int getNombreCoups() {
-		return nombreCoups;
-	}
-
-	public void setNombreCoups(int nombreCoups) {
-		this.nombreCoups = nombreCoups;
-	}
-
-
-
 }

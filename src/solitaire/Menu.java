@@ -12,13 +12,21 @@ import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * Classe constituant la barre du menu se situant en haut de la JFrame du programme
+ * @author Laurent et Jonathan
+ */
 public class Menu extends JMenuBar {
 
 	private static final long serialVersionUID = 1L;
+
 	private PlateauTech plateau;
-	private PlateauUI pUI;
+
+	/** Variable qui sera utilisé pour déterminer quel plateau il faudra initialiser */
 	private int choix = 1;
 
+	/** The Constant Aide. */
 	private static final String Aide = "Règles du jeu\n" +
 			"-------------\n\n"+
 			"Les regles sont simples, vous disposez d'un plateau\n" +
@@ -29,10 +37,14 @@ public class Menu extends JMenuBar {
 			"plateau.\n\nBon Jeu !";
 
 
-	public Menu(final PlateauTech plateau) {
+	/**
+	 * Instancie un nouveau menu.
+	 *
+	 * @param PlateauTech Plateau Technique
+	 */
+	public Menu(PlateauTech plateau) {
 		super();
 		this.plateau = plateau;
-		pUI = new PlateauUI(plateau);
 
 		JMenuItem partie = new JMenuItem("Recommencer");
 		partie.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N,InputEvent.CTRL_MASK));
@@ -146,6 +158,11 @@ public class Menu extends JMenuBar {
 		this.add(apd);
 	}
 
+	/**
+	 * procédure permettant d'initialiser un plateau à partir du choix sélectionné
+	 *
+	 * @param choix qui est modifié par les ActionListener du menu Plateau de Personnalisation
+	 */
 	public void choixPlateau(int choix){
 		switch (choix) {
 		case 1 : plateau.initPlateauCroix(); break;
