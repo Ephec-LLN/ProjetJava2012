@@ -12,7 +12,6 @@ import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 
 
-// TODO: Auto-generated Javadoc
 /**
  * Classe constituant la barre du menu se situant en haut de la JFrame du programme
  * @author Laurent et Jonathan

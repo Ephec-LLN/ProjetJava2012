@@ -63,7 +63,7 @@ public class PlateauUI extends JPanel {
 	}
 
 	/**
-	 * @majPlateau procédure permettant de garder à jour les images constituant le JButton
+	 * procédure permettant de garder à jour les images constituant le JButton
 	 */
 	public void majPlateau() {
 
