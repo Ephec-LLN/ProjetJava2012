@@ -7,7 +7,7 @@ import java.awt.Toolkit;
 import javax.swing.JPanel;
 
 /**
- * classe étendue d'un JPanel permettant d'obtenir une image de fond pour le jeu
+ * classe etendue d'un JPanel permettant d'obtenir une image de fond pour le jeu
  * @author Laurent & Jonathan
  */
 

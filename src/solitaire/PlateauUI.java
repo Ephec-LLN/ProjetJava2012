@@ -30,7 +30,7 @@ public class PlateauUI extends JPanel {
 	/** Tableau contenant un certain nombre de cases "pion" */
 	private Pion[][] tabPions = new Pion[nbColonnes][nbLignes];
 	/**
-	 * Tableau reprenant les différents chemins des images utilisées
+	 * Tableau reprenant les differents chemins des images utilisees
 	 */
 	private String[] tabCheminImg = {"images/jonathan.gif","images/laurent.gif", "images/solitaireVidesTransp.gif"};
 
@@ -63,7 +63,7 @@ public class PlateauUI extends JPanel {
 	}
 
 	/**
-	 * procédure permettant de garder à jour les images constituant le JButton
+	 * methode permettant de garder a jour les images constituant le JButton
 	 */
 	public void majPlateau() {
 
@@ -106,7 +106,7 @@ public class PlateauUI extends JPanel {
 	}
 	
 	/**
-	 * Classe étendue d'un JButton implémentant un MouseListener et définissant la dimension des cases "pion"
+	 * Classe etendue d'un JButton implementant un MouseListener et definissant la dimension des cases "pion"
 	 * @author Laurent & Jonathan
 	 *
 	 */

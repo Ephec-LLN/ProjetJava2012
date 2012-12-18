@@ -4,7 +4,7 @@ import java.awt.BorderLayout;
 import javax.swing.JFrame;
 
 /**
- * Classe initialisant la JFrame, qui contient tous les éléments
+ * Classe initialisant la JFrame, qui contient tous les elements
  * @author Laurent & Jonathan
  */
 public class Jeu {

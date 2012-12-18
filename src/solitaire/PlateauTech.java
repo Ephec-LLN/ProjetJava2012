@@ -10,7 +10,7 @@ public class PlateauTech {
 	private Menu menu;
 
 	/**
-	 * tableau contenant des entiers qui permettent de déterminer si une case 
+	 * tableau contenant des entiers qui permettent de determiner si une case 
 	 * contient un pion (1), n'en contient pas (0) ou est inaccessible (-1)
 	 */
 	protected int[][] tabPions = new int [7][7];
@@ -49,7 +49,7 @@ public class PlateauTech {
 		tabPions[3][3] = 0; //Pas de pion au centre du plateau
 	} // fin initPlateau
 	/**
-	 * initialise un plateau en forme de carré
+	 * initialise un plateau en forme de carre
 	 */
 	public void initPlateauCarre(){
 		for (int i = 0; i < 7 ; i++){
@@ -88,7 +88,7 @@ public class PlateauTech {
 		tabPions[6][6] = -1;		
 	}
 	/**
-	 * initialise un plateau en forme de mozaïque
+	 * initialise un plateau en forme de mozaique
 	 */
 	public void initPlateauMoz(){
 		for (int i = 0; i < 7 ; i++){
@@ -149,11 +149,11 @@ public class PlateauTech {
 
 	/**
 	 * permet de jouer un coup
-	 * @param x1 ligne du pion de départ
-	 * @param y1 colonne du pion de départ
-	 * @param x2 ligne du pion après le "saut"
-	 * @param y2 colonne du pion après le "saut"
-	 * @return 1 si possiblité de "sauter" un pion, 0 sinon
+	 * @param x1 ligne du pion de depart
+	 * @param y1 colonne du pion de depart
+	 * @param x2 ligne du pion apres le "saut"
+	 * @param y2 colonne du pion apres le "saut"
+	 * @return 1 si possiblite de "sauter" un pion, 0 sinon
 	 */
 	public int sautPion(int x1, int y1, int x2, int y2){
 		int xM = (x1+x2)/2; // coordonnee en x du pion au dessus duquel on saute
@@ -162,7 +162,7 @@ public class PlateauTech {
 		if ((x1 == x2 && Math.abs(y1 - y2) == 2 && tabPions[x1][y1] == 1 && tabPions[xM][yM] == 1 && tabPions[x2][y2] == 0)||(y1 == y2 && Math.abs(x1 - x2) == 2 && tabPions[x1][y1] == 1 && tabPions[xM][yM] == 1 && tabPions[x2][y2] == 0)) {
 			tabPions[x1][y1] = 0;    // on "efface" le pion de départ
 			tabPions[xM][yM] = 0;	 // on "efface" le pion "sauté"
-			tabPions[x2][y2] = 1;	 // on "ajoute" le pion de l'arrivée
+			tabPions[x2][y2] = 1;	 // on "ajoute" le pion de l'arrivee
 			return 1;
 		} else return -1;
 

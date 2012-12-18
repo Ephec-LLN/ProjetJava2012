@@ -1,11 +1,11 @@
 
-/** Fournit les classes nécessaire pour créer notre jeu :
+/** Fournit les classes necessaire pour creer notre jeu :
  * 
- * la classe Jeu contenant la méthode main
- * la classe Fond définissant l'image de fond de notre fenetre
- * la classe Menu permettant de générer notre menu
- * la classe PlateauTech permettant de gérer le plateau
- * la classe PlateauUI permettant de générer le plateau 
+ * la classe Jeu contenant la methode main
+ * la classe Fond definissant l'image de fond de notre fenetre
+ * la classe Menu permettant de generer notre menu
+ * la classe PlateauTech permettant de gerer le plateau
+ * la classe PlateauUI permettant de generer le plateau 
  * 
  * @version 1.0
  * @author Jonathan et Laurent 

@@ -22,17 +22,17 @@ public class Menu extends JMenuBar {
 
 	private PlateauTech plateau;
 
-	/** Variable qui sera utilisé pour déterminer quel plateau il faudra initialiser */
+	/** Variable qui sera utilise pour determiner quel plateau il faudra initialiser */
 	private int choix = 1;
 
 	/** The Constant Aide. */
-	private static final String Aide = "Règles du jeu\n" +
+	private static final String Aide = "Regles du jeu\n" +
 			"-------------\n\n"+
 			"Les regles sont simples, vous disposez d'un plateau\n" +
 			"en forme de croix, la case centrale etant vide, le\n" +
-			"reste est rempli de pions. Pour éliminer un pion,\n" +
+			"reste est rempli de pions. Pour eliminer un pion,\n" +
 			"il suffit de sauter au dessus avec un autre pion. Le\n" +
-			"but étant de n'avoir plus qu'un pion, au centre du\n" +
+			"but etant de n'avoir plus qu'un pion, au centre du\n" +
 			"plateau.\n\nBon Jeu !";
 
 
@@ -158,9 +158,9 @@ public class Menu extends JMenuBar {
 	}
 
 	/**
-	 * procédure permettant d'initialiser un plateau à partir du choix sélectionné
+	 * methode permettant d'initialiser un plateau à partir du choix selectionne
 	 *
-	 * @param choix qui est modifié par les ActionListener du menu Plateau de Personnalisation
+	 * @param choix qui est modifie par les ActionListener du menu Plateau de Personnalisation
 	 */
 	public void choixPlateau(int choix){
 		switch (choix) {
