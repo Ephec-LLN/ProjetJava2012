@@ -1,8 +1,8 @@
 package solitaire;
 
 /**
+ * genere le plateau de jeu au niveau technique.
  * @author Laurent et Jonathan
- *@PlateauTech genere le plateau de jeu au niveau technique.
  */
 
 public class PlateauTech {
